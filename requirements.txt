@@ -1,0 +1,10 @@
+pyodbc
+streamlit
+kaleido
+matplotlib
+path
+plotly
+streamlit_option_menu
+bokeh
+streamlit-aggrid
+exchange_calendars

@@ -29,7 +29,7 @@ import pickle
 
 root=''
 logo = Image.open('ace.jpg') 
-dong = Image.open('thumb.png') 
+#dong = Image.open('thumb.png') 
 ACEETF = Image.open(root+'ACEETF.jpg') 
 ETF = Image.open(root+'ETF.jpg') 
 ECO = Image.open(root+'ECO.jpg') 

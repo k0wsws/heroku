@@ -18,7 +18,7 @@ import page10_회사별overview as p11
 import page11_fund as p12
 import page12_fund2 as p13
 import page13_comment as p14
-import page14_news as p15
+#import page14_news as p15
 import page15_all as p16
 #import page_board as pb
 from PIL import Image

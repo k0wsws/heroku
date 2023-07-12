@@ -13,7 +13,7 @@ import pickle
 from PIL import Image
 from datetime import date,timedelta,datetime
 from pday import Pday
-import load 
+#import load 
 logo = Image.open('ace.jpg') 
 now = datetime.now()
 pweek = now-timedelta(7)

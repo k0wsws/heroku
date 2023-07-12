@@ -12,4 +12,4 @@ streamlit_chat
 seaborn
 openai
 bs4
-googleapiclient
+google-api-python-client

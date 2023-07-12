@@ -25,7 +25,7 @@ pmonth = now-timedelta(30)
 root=''
 
 #데이터불러오기
-comp_map,comp_overview,comp_investor,ant_ret=ld.load_data_p11()
+#comp_map,comp_overview,comp_investor,ant_ret=ld.load_data_p11()
 
 class generate():
 
@@ -70,10 +70,10 @@ class generate():
         
         ##데이터 불러오기
         
-        # comp_map=pickle.load( open(root+'comp_map.pkl', 'rb')) 
-        # comp_overview=pickle.load( open(root+'comp_overview.pkl', 'rb')) 
-        # comp_investor=pickle.load( open(root+'comp_investor.pkl', 'rb')) 
-        # ant_ret=pickle.load(open(root+'ant_ret.pkl','rb')) 
+        comp_map=pickle.load( open(root+'comp_map.pkl', 'rb')) 
+        comp_overview=pickle.load( open(root+'comp_overview.pkl', 'rb')) 
+        comp_investor=pickle.load( open(root+'comp_investor.pkl', 'rb')) 
+        ant_ret=pickle.load(open(root+'ant_ret.pkl','rb')) 
         
         
         start=max(comp_overview[comp_overview['TR_YMD']<=start_t]['TR_YMD'])

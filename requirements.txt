@@ -10,6 +10,6 @@ streamlit-aggrid
 exchange_calendars
 streamlit_chat
 seaborn
-opeinai
+openai
 bs4
 googleapiclient

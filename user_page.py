@@ -352,8 +352,8 @@ elif choose == "경쟁상품비교" :
     except IndexError:
         st.write('경쟁상품 맵핑전')
 elif choose == "chat" :
-    
-    p9.generate()
+    st.write("준비중")
+    #p9.generate()
     
 elif choose == "회사별 현황" :
     

@@ -23,19 +23,19 @@ root=''
    
 
 ###데이터 불러오기
-investor, aum_raw, aum_ace_raw, investor_ace, aum_ace_all, aum_rev = load.load_data()
+#investor, aum_raw, aum_ace_raw, investor_ace, aum_ace_all, aum_rev = load.load_data()
 
 
 def aum_load():
     
     # ##데이터 불러오기
-    # investor=pickle.load(open(root+'investor.pkl','rb'))   
-    # aum_raw=pickle.load(open(root+'aum_raw.pkl','rb'))   
-    # aum_ace_raw=pickle.load(open(root+'aum_ace.pkl','rb'))   
-    # investor_ace=pickle.load(open(root+'investor_ace.pkl','rb'))   
-    # aum_ace_all=pickle.load(open(root+'aum_ace_all.pkl','rb')) 
-    # aum_rev=pickle.load(open(root+'aum_rev.pkl','rb'))  
-    # aum_rev=aum_rev.sort_values(by='TR_YMD',axis=0)
+    investor=pickle.load(open(root+'investor.pkl','rb'))   
+    aum_raw=pickle.load(open(root+'aum_raw.pkl','rb'))   
+    aum_ace_raw=pickle.load(open(root+'aum_ace.pkl','rb'))   
+    investor_ace=pickle.load(open(root+'investor_ace.pkl','rb'))   
+    aum_ace_all=pickle.load(open(root+'aum_ace_all.pkl','rb')) 
+    aum_rev=pickle.load(open(root+'aum_rev.pkl','rb'))  
+    aum_rev=aum_rev.sort_values(by='TR_YMD',axis=0)
     
     
     

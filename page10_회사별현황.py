@@ -15,7 +15,7 @@ from pday import Pday
 import pandas as pd
 import pickle
 import plotly.express as px
-import load as ld
+#import load as ld
 
 logo = Image.open('ace.jpg') 
 now = datetime.now()

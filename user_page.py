@@ -285,6 +285,8 @@ elif choose == "Cluster Map":
 
 
 elif choose == "시장점유율":
+
+    st.write("준비중") 
     
     #msg.generate()
         
@@ -293,6 +295,7 @@ elif choose == "시장점유율":
 
 
 elif choose == "DATA":
+   st.write("준비중") 
     
     #rd.generate()
             

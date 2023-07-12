@@ -16,7 +16,7 @@ import pickle
 import math
 import matplotlib as mpl
 
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 logo = Image.open('ace.jpg')
 data_ace = pd.read_csv(root+"ACE.csv")

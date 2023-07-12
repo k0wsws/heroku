@@ -25,11 +25,11 @@ pmonth = now-timedelta(30)
 conn=DB.conn()
 root=''
 
-# master_comp=pickle.load(open(root+'master_comp.pkl','rb'))   
-# investor=pickle.load(open(root+'investor.pkl','rb'))   
-# ace_overview=pickle.load( open(root+'ace_overview.pkl', 'rb')) 
+master_comp=pickle.load(open(root+'master_comp.pkl','rb'))   
+investor=pickle.load(open(root+'investor.pkl','rb'))   
+ace_overview=pickle.load( open(root+'ace_overview.pkl', 'rb')) 
 
-master_comp,investor,ace_overview= ld.load_data_p8()
+#master_comp,investor,ace_overview= ld.load_data_p8()
 
 class generate():
 

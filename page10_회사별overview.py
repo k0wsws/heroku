@@ -15,7 +15,7 @@ import pandas as pd
 import pickle
 import numpy as np
 import plotly.express as px
-import load as ld
+#import load as ld
 logo = Image.open('ace.jpg') 
 now = datetime.now()
 pweek = now-timedelta(7)

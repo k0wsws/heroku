@@ -13,6 +13,8 @@ import seaborn as sns
 from scipy.cluster.hierarchy import linkage, dendrogram, fcluster
 import kmean as km
 import pickle
+import math
+import matplotlib as mpl
 
 root='C:\\Users\\user\\Dashboard\\dataset\\'
 
@@ -51,6 +53,8 @@ def generate():
             
         dendrogram(Z, labels=data_ace.columns, orientation='top', leaf_rotation=90);
         
+        
+        
         title1 = '<p style="font-family:Cooper Black; color:#000000; font-size: 20px;">1. Correlation Matrix</p>'
         st.markdown(title1, unsafe_allow_html=True)     
         st.pyplot(fig)
@@ -59,10 +63,25 @@ def generate():
         st.markdown(title2, unsafe_allow_html=True)        
         st.pyplot(fig2)
         
-        title3 = '<p style="font-family:Cooper Black; color:#000000; font-size: 20px;">3. K-mean</p>'
+        title3 = '<p style="font-family:Cooper Black; color:#000000; font-size: 20px;">3. Risk-Return Profile</p>'
         st.markdown(title3, unsafe_allow_html=True)  
         
-        st.pyplot(km.fig())
+        fig3=plt.figure(figsize=(5,5))
+        plt.rc('font', family='Malgun Gothic')
+        mpl.rc('axes', unicode_minus=False)
+        data=data_ace.pct_change(784)
+        data_rt=data_ace.pct_change().dropna()
+        data=data.dropna()
+        x=data_rt.std()*math.sqrt(224)
+        x=x.tolist()
+        y=(data.mean()).tolist()
+
+        symbols = data_ace.columns
+        plt.scatter(x,y)
+        for index, symbol in enumerate(symbols):
+            plt.annotate(symbol, (x[index], y[index]))
+            
+        st.pyplot(fig3)
     
         
     elif option2 =="전체":

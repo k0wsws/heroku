@@ -11,7 +11,7 @@ from streamlit_chat import message
 import os 
 from dotenv import load_dotenv
 load_dotenv('api_key.env')
-openai.api_key = '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'
+openai.api_key = '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'
 def generate_response(prompt):
     completion = openai.ChatCompletion.create(
 model="gpt-3.5-turbo",

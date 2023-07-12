@@ -13,16 +13,31 @@ import pickle
 from PIL import Image
 from datetime import date,timedelta,datetime
 from pday import Pday
-
+import load 
 logo = Image.open('ace.jpg') 
 now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(30)
 root='C:\\Users\\user\\Dashboard\\dataset\\'
 
+   
+
+###데이터 불러오기
+investor, aum_raw, aum_ace_raw, investor_ace, aum_ace_all, aum_rev = load.load_data()
 
 
 def aum_load():
+    
+    # ##데이터 불러오기
+    # investor=pickle.load(open(root+'investor.pkl','rb'))   
+    # aum_raw=pickle.load(open(root+'aum_raw.pkl','rb'))   
+    # aum_ace_raw=pickle.load(open(root+'aum_ace.pkl','rb'))   
+    # investor_ace=pickle.load(open(root+'investor_ace.pkl','rb'))   
+    # aum_ace_all=pickle.load(open(root+'aum_ace_all.pkl','rb')) 
+    # aum_rev=pickle.load(open(root+'aum_rev.pkl','rb'))  
+    # aum_rev=aum_rev.sort_values(by='TR_YMD',axis=0)
+    
+    
     
     e1,col1,e2,e3, col2 = st.columns( [0.1,0.1,0.1,0.5, 0.2])
     
@@ -37,21 +52,9 @@ def aum_load():
         end=str(end).replace("-", "")[0:8]
     with col2:               # To display brand log
             st.image(logo, width=200 )
-   
-    ##데이터 불러오기
-    investor=pickle.load(open(root+'investor.pkl','rb'))   
-    aum_raw=pickle.load(open(root+'aum_raw.pkl','rb'))   
-    aum_ace_raw=pickle.load(open(root+'aum_ace.pkl','rb'))   
-    investor_ace=pickle.load(open(root+'investor_ace.pkl','rb'))   
-    aum_ace_all=pickle.load(open(root+'aum_ace_all.pkl','rb')) 
-    aum_rev=pickle.load(open(root+'aum_rev.pkl','rb'))  
-    aum_rev=aum_rev.sort_values(by='TR_YMD',axis=0)
-    
-    
-    aum=pickle.load(open(root+'aum.pkl','rb'))    
 
 
-    
+    aum=pickle.load(open(root+'aum.pkl','rb'))  
     start=max(aum[aum['TR_YMD']<=start]['TR_YMD'])
     end=max(aum[aum['TR_YMD']<=end]['TR_YMD'])
     

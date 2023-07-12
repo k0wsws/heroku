@@ -12,8 +12,9 @@ logo = Image.open('ace.jpg')
 now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(30)
-conn=DB.conn()
 root='C:\\Users\\user\\Dashboard\\dataset\\'
+print(pd.__version__)
+print("Streamlit version:", st.__version__)
 
 class generate():
 
@@ -71,22 +72,22 @@ class generate():
         
         
 
-        ace_overview=pd.merge(left = ace_overview[ace_overview['TR_YMD']==end] , right = etf_map, how = "left", on = ["ETF_CD"])
+        ace_overview=pd.merge(left = ace_overview[ace_overview['TR_YMD']=='20230428'] , right = etf_map, how = "left", on = ["ETF_CD"])
         
         ##개인순매수 상위
-        ant_ace=investor_ace[(investor_ace['INVEST_GB']==8)& (investor_ace['TR_YMD']>=start_net)& (investor_ace['TR_YMD']<=end)]
-        ant_ace=ant_ace.groupby(['ETF_NM','INVEST_GB']).sum().reset_index()
+        ant_ace=investor_ace[(investor_ace['INVEST_GB']==8)& (investor_ace['TR_YMD']>='20230401')& (investor_ace['TR_YMD']<='20230428')]
+        ant_ace=ant_ace.groupby(['ETF_NM']).sum('NET_AMT').reset_index()
         ant_ace.rename(columns={'NET_AMT':'개인(억)'},inplace=True)
 
         
         ##보험순매수 상위
-        ins_ace=investor_ace[(investor_ace['INVEST_GB']==2)& (investor_ace['TR_YMD']>=start_net)& (investor_ace['TR_YMD']<=end)]
+        ins_ace=investor_ace[(investor_ace['INVEST_GB']==2)& (investor_ace['TR_YMD']>='20230401')& (investor_ace['TR_YMD']<='20230428')]
         ins_ace=ins_ace.groupby(['ETF_NM','INVEST_GB']).sum().reset_index()
         ins_ace.rename(columns={'NET_AMT':'보험(억)'},inplace=True)
 
         
         ##은행순매수 상위
-        bnk_ace=investor_ace[(investor_ace['INVEST_GB']==4)& (investor_ace['TR_YMD']>=start_net)& (investor_ace['TR_YMD']<=end)]
+        bnk_ace=investor_ace[(investor_ace['INVEST_GB']==4)& (investor_ace['TR_YMD']>='20230401')& (investor_ace['TR_YMD']<='20230428')]
         bnk_ace=bnk_ace.groupby(['ETF_NM','INVEST_GB']).sum().reset_index()
         bnk_ace.rename(columns={'NET_AMT':'은행(억)'},inplace=True)
         

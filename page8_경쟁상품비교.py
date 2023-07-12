@@ -16,13 +16,13 @@ import pandas as pd
 import pickle
 import re
 import plotly.express as px
-import load as ld
+#import load as ld
 
 logo = Image.open('ace.jpg') 
 now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(30)
-conn=DB.conn()
+#conn=DB.conn()
 root=''
 
 master_comp=pickle.load(open(root+'master_comp.pkl','rb'))   

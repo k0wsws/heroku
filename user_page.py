@@ -4,7 +4,7 @@ Created on Wed Feb 22 16:16:29 2023
 
 @author: user
 """
-import page1_분류별현황 as ov
+#import page1_분류별현황 as ov
 import page2_investor as invt
 import page3_cluster as clust
 import page4_RawData as rd
@@ -201,8 +201,8 @@ if choose == "ETF Market Overview":
     if sub_menu == "Market Overview":
         ov_new.aum_load()
     
-    elif sub_menu == "Asset 분류별 현황":
-        ov.generate()
+   # elif sub_menu == "Asset 분류별 현황":
+   #     ov.generate()
 
     elif sub_menu == "회사별 현황":
         p10.generate()

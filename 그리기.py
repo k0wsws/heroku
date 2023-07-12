@@ -17,7 +17,7 @@ from streamlit_option_menu import option_menu
 import pickle
 from st_aggrid import AgGrid, JsCode, GridOptionsBuilder,ColumnsAutoSizeMode
 from bokeh.plotting import figure
-
+import page1_분류별현황.py as p1
 from bokeh.models import ColumnDataSource, CustomJS
 from bokeh.models import DataTable, TableColumn, HTMLTemplateFormatter
 from st_aggrid import AgGrid, GridUpdateMode, JsCode
@@ -88,9 +88,9 @@ hide_table_row_index = """
             tbody th {display:none}
             </style>
             """
-aum1=pickle.load(open('aum1.pkl','rb'))  #pd.read_pickle(root+'aum1.pkl') 
+#aum1=pickle.load(open('aum1.pkl','rb'))  #pd.read_pickle(root+'aum1.pkl') 
 #investor=pd.read_pickle(root+'news_df_eco.pkl') #pickle.load(open('investor.pkl','rb'))   
-overview=pd.read_pickle(root+'overview.pkl') #pickle.load( open('overview.pkl', 'rb')) 
+#overview=pd.read_pickle(root+'overview.pkl') #pickle.load( open('overview.pkl', 'rb')) 
 #etf_map=pd.read_pickle(root+'etf_map.pkl') #pickle.load( open('etf_map.pkl', 'rb')) 
 #trd_amt=pd.read_pickle(root+'trd_amt.pkl') #pickle.load( open('trd_amt.pkl', 'rb')) 
 
@@ -137,4 +137,5 @@ if choose == "ACE":
         #    with col2:  
         #        st.image(bed)
  
-
+elif choose == "회사별 현황":
+            p1.generate()

@@ -14,3 +14,4 @@ openai
 bs4
 google-api-python-client
 scikit-learn
+pandas<2.0.0

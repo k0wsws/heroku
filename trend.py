@@ -17,7 +17,6 @@ import glob
 import sys
 import os
 import streamlit as st
-import DB_ETF as DB
 from st_aggrid import AgGrid, GridUpdateMode, JsCode
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode, AgGridTheme
 from PIL import Image
@@ -37,8 +36,7 @@ logo = Image.open('ace.jpg')
 now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(100)
-conn=DB.conn()
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 #%matplotlib inline
 plt.rcParams['axes.unicode_minus'] = False

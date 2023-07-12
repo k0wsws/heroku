@@ -7,18 +7,18 @@ Created on Wed Feb 22 16:16:29 2023
 #import page1_분류별현황 as ov
 import page2_investor as invt
 import page3_cluster as clust
-import page4_RawData as rd
-import page5_MSgen as msg
+#import page4_RawData as rd
+#import page5_MSgen as msg
 import page6_ace_overview as ace_ov
 import page7_overview as ov_new
 import page8_경쟁상품비교 as p8
-import page9_chat as p9
+#import page9_chat as p9
 import page10_회사별현황 as p10
 import page10_회사별overview as p11
 import page11_fund as p12
 import page12_fund2 as p13
 import page13_comment as p14
-import page14_news as p15
+#import page14_news as p15
 import page15_all as p16
 #import page_board as pb
 from PIL import Image
@@ -28,7 +28,7 @@ from streamlit_option_menu import option_menu
 import news
 import datetime
 import csv
-from streamlit_disqus import st_disqus
+#from streamlit_disqus import st_disqus
 import pickle
 import matplotlib.pyplot as plt
 import plotly.express as px
@@ -285,16 +285,19 @@ elif choose == "Cluster Map":
 
 
 elif choose == "시장점유율":
+
+    st.write("준비중") 
     
-    msg.generate()
+    #msg.generate()
         
         
 ##########################################로우데이터#############################################################
 
 
 elif choose == "DATA":
+   st.write("준비중") 
     
-    rd.generate()
+    #rd.generate()
             
 ##########################################오버뷰#############################################################    
     
@@ -349,8 +352,8 @@ elif choose == "경쟁상품비교" :
     except IndexError:
         st.write('경쟁상품 맵핑전')
 elif choose == "chat" :
-    
-    p9.generate()
+    st.write("준비중")
+    #p9.generate()
     
 elif choose == "회사별 현황" :
     

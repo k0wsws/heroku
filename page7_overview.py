@@ -18,7 +18,7 @@ logo = Image.open('ace.jpg')
 now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(30)
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
    
 

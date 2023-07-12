@@ -15,7 +15,7 @@ import openai
 import pandas as pd
 import streamlit as st
 
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 # OPENAI API키 설정
 openai.api_key = "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"
 

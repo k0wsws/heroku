@@ -6,7 +6,6 @@ Created on Wed Mar 22 16:46:18 2023
 """
 
 import streamlit as st
-import DB_ETF as DB
 from st_aggrid import AgGrid, GridUpdateMode, JsCode
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode, AgGridTheme
 from PIL import Image
@@ -19,8 +18,6 @@ import plotly.express as px
 import requests
 from bs4 import BeautifulSoup
 
-page=1
-codes='251890'
 def NS_users_crawler(codes, page):
     # User-Agent 설정
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'}
@@ -65,8 +62,7 @@ logo = Image.open('ace.jpg')
 now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(100)
-conn=DB.conn()
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 fund_asset=pickle.load(open(root+'fund_asset.pkl','rb'))   
 maxend=max(fund_asset[fund_asset['TRD_DT']<=str(Pday()).replace("-", "")[0:8]]['TRD_DT'])
@@ -95,11 +91,8 @@ class generate():
         
         ##데이터 불러오기
        
-        
-        ace = """
-         SELECT ETF_CD,ETF_NM NM fROM FN_ETFDATA WHERE TR_YMD=(SELECT MAX(TR_YMD) FROM FN_ETFINFO WHERE TR_YMD<=GETDATE()) AND ETF_CD IN (SELECT STk_CD FROM ES_fUND_MAP) order by ETF_NM ASC
-         """
-        ace=DB.read(ace,conn) 
+
+        ace=pickle.load(open(root+'ace.pkl','rb'))   
 
         option1 = st.selectbox("펀드명", ace['NM'],key=13)
         

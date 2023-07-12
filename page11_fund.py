@@ -6,7 +6,7 @@ Created on Wed Mar 22 16:46:18 2023
 """
 
 import streamlit as st
-import DB_ETF as DB
+#import DB_ETF as DB
 from st_aggrid import AgGrid, GridUpdateMode, JsCode
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode, AgGridTheme
 from PIL import Image
@@ -21,8 +21,8 @@ logo = Image.open('ace.jpg')
 now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(200)
-conn=DB.conn()
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+#conn=DB.conn()
+root=''
 
 fund_asset=pickle.load(open(root+'fund_asset.pkl','rb'))   
 maxend=max(fund_asset[fund_asset['TRD_DT']<=str(Pday()).replace("-", "")[0:8]]['TRD_DT'])
@@ -79,15 +79,10 @@ class generate():
         name=['ACE','타사']
         page=st.radio('',name,index=0)
         
-        ace = """
-         SELECT ETF_NM NM fROM quant1.dbo.FN_ETFDATA WHERE TR_YMD=(SELECT MAX(TR_YMD) FROM quant1.dbo.FN_ETFINFO WHERE TR_YMD<=GETDATE()-1) AND ETF_CD IN (SELECT STk_CD FROM quant1.dbo.ES_fUND_MAP) order by ETF_NM ASC
-         """
-        ace=DB.read(ace,conn) 
-        
-        ex_ace = """
-         SELECT ETF_NM NM fROM quant1.dbo.FN_ETFDATA WHERE TR_YMD=(SELECT MAX(TR_YMD) FROM quant1.dbo.FN_ETFINFO WHERE TR_YMD<=GETDATE()-1) AND ETF_CD not IN (SELECT ISNULL(STk_CD,'A452250') FROM quant1.dbo.ES_fUND_MAP) order by ETF_NM ASC
-         """
-        ex_ace=DB.read(ex_ace,conn) 
+
+        ace=pickle.load(open(root+'ace.pkl','rb'))
+
+        ex_ace=pickle.load(open(root+'ex_ace.pkl','rb')) 
         
     
         col1, col2, col3, col4, col5 = st.columns( [0.2, 0.2,0.2,0.2,0.2])

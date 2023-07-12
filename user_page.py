@@ -7,8 +7,8 @@ Created on Wed Feb 22 16:16:29 2023
 #import page1_분류별현황 as ov
 import page2_investor as invt
 import page3_cluster as clust
-import page4_RawData as rd
-import page5_MSgen as msg
+#import page4_RawData as rd
+#import page5_MSgen as msg
 import page6_ace_overview as ace_ov
 import page7_overview as ov_new
 import page8_경쟁상품비교 as p8
@@ -286,7 +286,7 @@ elif choose == "Cluster Map":
 
 elif choose == "시장점유율":
     
-    msg.generate()
+    #msg.generate()
         
         
 ##########################################로우데이터#############################################################
@@ -294,7 +294,7 @@ elif choose == "시장점유율":
 
 elif choose == "DATA":
     
-    rd.generate()
+    #rd.generate()
             
 ##########################################오버뷰#############################################################    
     

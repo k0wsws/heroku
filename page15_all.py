@@ -27,7 +27,7 @@ logo = Image.open('ace.jpg')
 now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(30)
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 # aum1=pickle.load(open(root+'aum1.pkl','rb'))   
 # ant_ret=pickle.load(open(root+'ant_ret.pkl','rb'))   

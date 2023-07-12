@@ -10,3 +10,5 @@ streamlit-aggrid
 exchange_calendars
 streamlit_chat
 seaborn
+opeinai
+bs4

@@ -12,3 +12,4 @@ streamlit_chat
 seaborn
 opeinai
 bs4
+googleapiclient

@@ -5,8 +5,8 @@ Created on Wed Feb 22 16:16:29 2023
 @author: user
 """
 #import page1_분류별현황 as ov
-import page2_investor as invt
-import page3_cluster as clust
+#import page2_investor as invt
+#import page3_cluster as clust
 #import page4_RawData as rd
 #import page5_MSgen as msg
 import page6_ace_overview as ace_ov
@@ -19,7 +19,7 @@ import page11_fund as p12
 import page12_fund2 as p13
 import page13_comment as p14
 #import page14_news as p15
-import page15_all as p16
+#import page15_all as p16
 #import page_board as pb
 from PIL import Image
 import streamlit as st
@@ -214,7 +214,8 @@ if choose == "ETF Market Overview":
           msg.generate()
           
     elif sub_menu == "전체ETF 현황":
-          p16.generate()   
+          st.write("준비중") 
+          #p16.generate()   
 ######################################################################################################
 if choose == "ETF Analysis":
     sub_menu = option_menu("ETF Analysis", [ "만기채권ETF분석","ACE경쟁상품비교", "투자자별 매매추이"],
@@ -271,14 +272,15 @@ if choose == "BUZZ":
 ###############################################시장주체별#######################################################        
 
 if choose == "INVESTOR":
-    invt.generate()
+    st.write("준비중") 
+    #invt.generate()
  
         
 ###############################################Clustering########################################################### 
         
 elif choose == "Cluster Map":
-    
-    clust.generate()
+    st.write("준비중") 
+    #clust.generate()
 
 
 ##########################################시장점유율#############################################################

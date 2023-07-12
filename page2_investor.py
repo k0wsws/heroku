@@ -8,7 +8,6 @@ import streamlit as st
 import fig_kor_2 as fp
 import fig_glo_2 as fg
 import streamlit as st
-import DB
 from st_aggrid import AgGrid, GridUpdateMode, JsCode
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode, AgGridTheme
 from PIL import Image
@@ -16,7 +15,7 @@ from datetime import date,timedelta,datetime
 import pandas as pd
 from pday import Pday
 import kmean_all as km
-conn=DB.conn()
+
 
 from PIL import Image
 logo = Image.open('ace.jpg') 
@@ -49,23 +48,12 @@ def generate():
     if option=='비교':
         
 
-        ace = """
-         SELECT ETF_NM NM fROM FN_ETFDATA WHERE TR_YMD=(SELECT MAX(TR_YMD) FROM FN_ETFINFO WHERE TR_YMD<=GETDATE()) AND ETF_CD IN (SELECT STk_CD FROM ES_fUND_MAP)
-         """
-        ace=DB.read(ace,conn)  
 
-        all1 = """
-        SELECT * FROM (SELECT '없음' NM
-   UNION
-    SELECT ETF_NM NM fROM FN_ETFDATA WHERE TR_YMD=(SELECT MAX(TR_YMD) FROM FN_ETFINFO WHERE TR_YMD<=GETDATE())) A order BY (case when NM = '없음' THEN 0 
-    																			WHEN NM LIKE 'KODEX%' THEN 1 ELSE 2 END) 
-         """
-        all1=DB.read(all1,conn)   
+        ace=pickle.load(open(root+'ace.pkl','rb'))  
+        all1=pickle.load(open(root+'all1.pkl','rb'))   
         
 
-        
-
-        
+   
         col1, col2, col3, col4, col5 = st.columns( [0.2, 0.2,0.2,0.2,0.2])
 
         with col1:          

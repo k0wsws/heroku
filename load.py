@@ -7,7 +7,7 @@ Created on Wed Jun 28 09:55:03 2023
 import streamlit as st
 import pickle
 
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 
 

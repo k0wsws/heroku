@@ -17,7 +17,7 @@ import streamlit as st
 from st_aggrid import AgGrid, GridUpdateMode, JsCode
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode, AgGridTheme
 
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 sc=StandardScaler()
 

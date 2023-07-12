@@ -88,9 +88,9 @@ hide_table_row_index = """
             tbody th {display:none}
             </style>
             """
-aum1=pd.read_pickle(root+'aum1.pkl') #pickle.load(open('aum1.pkl','rb'))   
+aum1=pickle.load(open('aum1.pkl','rb'))  #pd.read_pickle(root+'aum1.pkl') 
 #investor=pd.read_pickle(root+'news_df_eco.pkl') #pickle.load(open('investor.pkl','rb'))   
-#overview=pd.read_pickle(root+'overview.pkl') #pickle.load( open('overview.pkl', 'rb')) 
+overview=pd.read_pickle(root+'overview.pkl') #pickle.load( open('overview.pkl', 'rb')) 
 #etf_map=pd.read_pickle(root+'etf_map.pkl') #pickle.load( open('etf_map.pkl', 'rb')) 
 #trd_amt=pd.read_pickle(root+'trd_amt.pkl') #pickle.load( open('trd_amt.pkl', 'rb')) 
 

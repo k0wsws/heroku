@@ -88,11 +88,11 @@ hide_table_row_index = """
             tbody th {display:none}
             </style>
             """
-aum1=pd.read_pickle(root+'aum1.pkl') #pickle.load(open('aum1.pkl','rb'))   
+#aum1=pd.read_pickle(root+'aum1.pkl') #pickle.load(open('aum1.pkl','rb'))   
 #investor=pd.read_pickle(root+'news_df_eco.pkl') #pickle.load(open('investor.pkl','rb'))   
-overview=pd.read_pickle(root+'overview.pkl') #pickle.load( open('overview.pkl', 'rb')) 
-etf_map=pd.read_pickle(root+'etf_map.pkl') #pickle.load( open('etf_map.pkl', 'rb')) 
-trd_amt=pd.read_pickle(root+'trd_amt.pkl') #pickle.load( open('trd_amt.pkl', 'rb')) 
+#overview=pd.read_pickle(root+'overview.pkl') #pickle.load( open('overview.pkl', 'rb')) 
+#etf_map=pd.read_pickle(root+'etf_map.pkl') #pickle.load( open('etf_map.pkl', 'rb')) 
+#trd_amt=pd.read_pickle(root+'trd_amt.pkl') #pickle.load( open('trd_amt.pkl', 'rb')) 
 
 with st.sidebar:
     choose = option_menu("ACE DashBoard", ["ACE","OVERVIEW","회사별 현황","경쟁상품비교","INVESTOR","회사별 Overview","NEWS", "Cluster","시장점유율","DATA","chat"],

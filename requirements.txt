@@ -13,3 +13,4 @@ seaborn
 openai
 bs4
 google-api-python-client
+sklearn

@@ -1,5 +1,5 @@
 import streamlit as st
-import DB
+#import DB
 from st_aggrid import AgGrid, GridUpdateMode, JsCode
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode, AgGridTheme
 from PIL import Image
@@ -12,7 +12,7 @@ logo = Image.open('ace.jpg')
 now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(30)
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 print(pd.__version__)
 print("Streamlit version:", st.__version__)
 

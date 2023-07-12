@@ -6,7 +6,7 @@ Created on Wed Mar 22 16:46:18 2023
 """
 
 import streamlit as st
-import DB_ETF as DB
+#import DB_ETF as DB
 from st_aggrid import AgGrid, GridUpdateMode, JsCode
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, ColumnsAutoSizeMode, AgGridTheme
 from PIL import Image
@@ -23,7 +23,7 @@ now = datetime.now()
 pweek = now-timedelta(7)
 pmonth = now-timedelta(30)
 conn=DB.conn()
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 # master_comp=pickle.load(open(root+'master_comp.pkl','rb'))   
 # investor=pickle.load(open(root+'investor.pkl','rb'))   
@@ -78,15 +78,9 @@ class generate():
         start_net=min(ace_overview[ace_overview['TR_YMD']>=start_t]['TR_YMD'])
         end=max(ace_overview[ace_overview['TR_YMD']<=end_t]['TR_YMD'])
         
-        ace = """
-         SELECT ETF_NM NM fROM quant1.dbo.FN_ETFDATA WHERE TR_YMD=(SELECT MAX(TR_YMD) FROM quant1.dbo.FN_ETFINFO WHERE TR_YMD<=GETDATE()) AND ETF_CD IN (SELECT STk_CD FROM quant1.dbo.ES_fUND_MAP)
-         """
-        ace=DB.read(ace,conn)  
-        
-        comp = """
-         SELECT * fROM ES_COMP_MAP
-         """
-        comp=DB.read(comp,conn)  
+
+        ace=pickle.load(open(root+'ace.pkl','rb'))          
+        comp=pickle.load(open(root+'comp.pkl','rb'))  
     
         col1, col2, col3, col4, col5 = st.columns( [0.2, 0.2,0.2,0.2,0.2])
     

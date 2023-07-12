@@ -12,7 +12,7 @@ import page3_cluster as clust
 import page6_ace_overview as ace_ov
 import page7_overview as ov_new
 import page8_경쟁상품비교 as p8
-import page9_chat as p9
+#import page9_chat as p9
 import page10_회사별현황 as p10
 import page10_회사별overview as p11
 import page11_fund as p12
@@ -28,7 +28,7 @@ from streamlit_option_menu import option_menu
 import news
 import datetime
 import csv
-from streamlit_disqus import st_disqus
+#from streamlit_disqus import st_disqus
 import pickle
 import matplotlib.pyplot as plt
 import plotly.express as px

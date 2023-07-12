@@ -14,7 +14,7 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 from scipy.cluster.hierarchy import linkage, dendrogram, fcluster
 
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 sc=StandardScaler()
 

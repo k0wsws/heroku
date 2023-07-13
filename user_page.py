@@ -13,7 +13,7 @@ import page11_fund as p12
 #import page12_fund2 as p13
 import page13_comment as p14
 #import page14_news as p15
-#import page15_all as p16
+import page15_all as p16
 from PIL import Image
 import streamlit as st
 st.set_page_config(layout="wide")
@@ -210,8 +210,8 @@ if choose == "ETF Market Overview":
           #msg.generate()
           
     elif sub_menu == "전체ETF 현황":
-          st.write("준비중") 
-          #p16.generate()   
+          #st.write("준비중") 
+          p16.generate()   
 ######################################################################################################
 if choose == "ETF Analysis":
     sub_menu = option_menu("ETF Analysis", [ "만기채권ETF분석","ACE경쟁상품비교", "투자자별 매매추이"],

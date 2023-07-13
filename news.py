@@ -30,18 +30,18 @@ def news(trd_dt=now):
        
         start = st.date_input(
             "시작일",pmonth)
-        #start=str(start).replace("-", "")[0:8]  
+        start=str(start).replace("-", "")[0:8]  
         end = st.date_input(
             "기준일",now)
-        #end=str(end).replace("-", "")[0:8]
+        end=str(end).replace("-", "")[0:8]
     with col2:               # To display brand log
             st.image(logo, width=200 )
                
 
 
     sql=pickle.load( open(root+'news1.pkl', 'rb')) 
+    sql['TRD_DT']=pd.to_datetime(sql['TRD_DT'])
     data=sql[(sql['TRD_DT']>=start)& (sql['TRD_DT']<=end)]
-
 
     sql2=pickle.load( open(root+'news2.pkl', 'rb')) 
     data2=sql2[(sql2['TRD_DT']>=start)& (sql2['TRD_DT']<=end)]

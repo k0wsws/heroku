@@ -8,10 +8,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 import pandas as pd
-import DB_ETF as DB
-import seaborn as sns
 from datetime import date,timedelta,datetime
 from PIL import Image
+import pickle
 
 logo = Image.open('ace.jpg') 
 now = datetime.now()
@@ -21,7 +20,7 @@ pmonth = now-timedelta(30)
 pweek = pweek.strftime('%Y-%m-%d')
 #pmonth = pmonth.strftime('%Y-%m-%d')
 
-
+root=''
 
 def news(trd_dt=now):
     
@@ -40,59 +39,18 @@ def news(trd_dt=now):
                
 
 
-    sql="""
-    SELECT DISTINCT CONVERT(VARCHAR(20),CONVERT(datetime,trd_dt,1),120) TRD_DT,
-    COMPANY,
-    COUNT(TITLE) OVER (PARTITION BY TRD_DT,
-    COMPANY) '개수'
-    fROM
-    ES_NEWS_DATA
-    WHERE
-    TRD_DT BETWEEN '#{START_DT}' AND '#{END_DT}' ORDER BY TRD_DT desc,COMPANY asc
-    """
-    
-    sql = sql.replace('#{START_DT}', start) 
-    sql = sql.replace('#{END_DT}', end) 
-    
-    sql2="""
-    SELECT * fROM ES_NEWS_DATA WHERE
-    TRD_DT >= '20220719' order by trd_dt desc, company asc
-    """
-    
-    sql3="""
-    SELECT DISTINCT CONVERT(VARCHAR(20),CONVERT(datetime,trd_dt,1),120) TRD_DT,
-    COMPANY,
-    COUNT(TITLE) OVER (PARTITION BY TRD_DT,
-    COMPANY) '개수'
-    fROM
-    ES_NEWS_DATA
-    WHERE
-    TRD_DT >= '#{START_DT}' ORDER BY COMPANY,TRD_DT
-    """
-    
-    sql3 = sql3.replace('#{START_DT}', pweek) 
-    
-    sql4="""
-    SELECT TRD_DT,COMPANY,SUM(CNT) OVER (PARTITION BY COMPANY ORDER BY TRD_DT) '누적개수' FROM (SELECT DISTINCT CONVERT(VARCHAR(20),CONVERT(datetime,trd_dt,1),120) TRD_DT,
-    COMPANY,
-    COUNT(TITLE) OVER (PARTITION BY TRD_DT,
-    COMPANY) CNT
-    fROM
-    ES_NEWS_DATA
-    WHERE
-    TRD_DT BETWEEN '#{START_DT}' AND '#{END_DT}') A ORDER BY TRD_DT ASC,COMPANY asc
-    """
-    
-    sql4 = sql4.replace('#{START_DT}', start) 
-    sql4 = sql4.replace('#{END_DT}', end) 
-    
-    
-    conn=DB.conn()
+    sql=pickle.load( open(root+'news1.pkl', 'rb')) 
+    data=sql[(sql['TRD_DT']>=start)& (sql['TRD_DT']<=end)]
 
-    data=DB.read(sql,conn)
-    data2=DB.read(sql2,conn)
-    data3=DB.read(sql3,conn)
-    data4=DB.read(sql4,conn)
+
+    sql2=pickle.load( open(root+'news2.pkl', 'rb')) 
+    data2=sql2[(sql2['TRD_DT']>=start)& (sql2['TRD_DT']<=end)]
+    
+    data3 = sql[sql['TRD_DT']>=pweek]
+    
+    data4=sql.sort_values(by='TRD_DT')
+    data4['누적개수']= data4.groupby(['COMPANY'])['개수'].cumsum()
+    
     
     daily=pd.pivot(data=data, index='TRD_DT', values='개수',columns='COMPANY')
     daily=daily.fillna(0)
@@ -108,7 +66,6 @@ def news(trd_dt=now):
     fig_7=px.line(data3,x="TRD_DT",y="개수",color="COMPANY",title="뉴스" )
     fig_7.update_layout(title='최근1주일')
     
-    conn.close()
-    
+ 
     return fig,data2,fig_7,daily,fig_daily
  

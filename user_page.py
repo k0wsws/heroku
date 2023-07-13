@@ -36,7 +36,7 @@ import youtube_keywords as youtube
 ## 화면옵션
 
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
+#st.set_option('deprecation.showPyplotGlobalUse', False)
 
 from st_aggrid import AgGrid, JsCode, GridOptionsBuilder,ColumnsAutoSizeMode
 from bokeh.plotting import figure

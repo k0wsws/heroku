@@ -48,7 +48,8 @@ def news(trd_dt=now):
     
     data3 = sql[sql['TRD_DT']>=pweek]
     
-    data4=sql.sort_values(by='TRD_DT')
+    data4=sql[(sql['TRD_DT']>=start)& (sql['TRD_DT']<=end)]
+    data4=data4.sort_values(by='TRD_DT')
     data4['누적개수']= data4.groupby(['COMPANY'])['개수'].cumsum()
     
     

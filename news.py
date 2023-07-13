@@ -30,10 +30,10 @@ def news(trd_dt=now):
        
         start = st.date_input(
             "시작일",pmonth)
-        start=str(start).replace("-", "")[0:8]  
+        #start=str(start).replace("-", "")[0:8]  
         end = st.date_input(
             "기준일",now)
-        end=str(end).replace("-", "")[0:8]
+        #end=str(end).replace("-", "")[0:8]
     with col2:               # To display brand log
             st.image(logo, width=200 )
                

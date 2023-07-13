@@ -25,7 +25,7 @@ from PIL import Image
 import streamlit as st
 from streamlit_option_menu import option_menu
 #import TEST as test
-import news
+#import news
 import datetime
 import csv
 #from streamlit_disqus import st_disqus
@@ -312,36 +312,36 @@ elif choose == "회사별 Overview" :
     p11.generate()
     
 elif choose == "NEWS" :
+    st.write("준비중") 
+    #news=news.news()
     
-    news=news.news()
+    #col3,edge2, col4 = st.columns( [0.35,0.05, 0.6])
     
-    col3,edge2, col4 = st.columns( [0.35,0.05, 0.6])
+    #with col3:              
+    #    st.write(news[3].astype(int))
     
-    with col3:              
-        st.write(news[3].astype(int))
-    
-    with col4:               
-        st.plotly_chart(news[4], theme="streamlit", use_conatiner_width=True)
+    #with col4:               
+    #    st.plotly_chart(news[4], theme="streamlit", use_conatiner_width=True)
 
-    st.markdown(hide_table_row_index, unsafe_allow_html=True)
+    #st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
-    st.write(news[1])              
-    down=news[1].to_csv().encode('utf-8')
+   # st.write(news[1])              
+    #down=news[1].to_csv().encode('utf-8')
 
     
-    st.download_button(
-      label='📥 CSV로 저장',
-      data=down,
-      file_name="data.csv"
-      )
+   # st.download_button(
+   #   label='📥 CSV로 저장',
+   #   data=down,
+   #   file_name="data.csv"
+   #   )
     
-    col1,edge1, col2 = st.columns( [0.45,0.1, 0.45])
+  #  col1,edge1, col2 = st.columns( [0.45,0.1, 0.45])
     
-    with col1:              
-        st.plotly_chart(news[2], theme="streamlit", use_conatiner_width=True)
+  #  with col1:              
+  #      st.plotly_chart(news[2], theme="streamlit", use_conatiner_width=True)
     
-    with col2:               
-        st.plotly_chart(news[0], theme="streamlit", use_conatiner_width=True)
+  #  with col2:               
+  #      st.plotly_chart(news[0], theme="streamlit", use_conatiner_width=True)
 
 elif choose == "OVERVIEW" :
 

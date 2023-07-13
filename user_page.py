@@ -4,7 +4,7 @@ import page3_cluster as clust
 import page4_RawData as rd
 #import page5_MSgen as msg
 #import page6_ace_overview as ace_ov
-#import page7_overview as ov_new
+import page7_overview as ov_new
 import page8_경쟁상품비교 as p8
 import page9_chat as p9
 import page10_회사별현황 as p10
@@ -191,8 +191,8 @@ if choose == "ETF Market Overview":
                                )
     
     if sub_menu == "Market Overview":
-        st.write("준비중") 
-        #ov_new.aum_load()
+        #st.write("준비중") 
+        ov_new.aum_load()
     
    # elif sub_menu == "Asset 분류별 현황":
    #     ov.generate()

@@ -92,7 +92,7 @@ class generate():
         ##데이터 불러오기
        
 
-        ace=pickle.load(open(root+'ace.pkl','rb'))   
+        ace=pickle.load(open(root+'aceetf.pkl','rb'))   
 
         option1 = st.selectbox("펀드명", ace['NM'],key=13)
         

@@ -195,8 +195,8 @@ if choose == "ETF Market Overview":
                                )
     
     if sub_menu == "Market Overview":
-        st.write("준비중") 
-        #ov_new.aum_load()
+        #st.write("준비중") 
+        ov_new.aum_load()
     
    # elif sub_menu == "Asset 분류별 현황":
    #     ov.generate()

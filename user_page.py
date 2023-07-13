@@ -1,5 +1,5 @@
 #import page1_분류별현황 as ov
-#import page2_investor as invt
+import page2_investor as invt
 import page3_cluster as clust
 #import page4_RawData as rd
 #import page5_MSgen as msg
@@ -241,8 +241,8 @@ if choose == "ETF Analysis":
         p8.generate()
 
     elif sub_menu == "투자자별 매매추이":
-        st.write("준비중") 
-         #invt.generate()
+        #st.write("준비중") 
+        invt.generate()
        
 ######################################################################################################
 

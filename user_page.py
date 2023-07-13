@@ -1,7 +1,7 @@
 #import page1_분류별현황 as ov
 import page2_investor as invt
 import page3_cluster as clust
-#import page4_RawData as rd
+import page4_RawData as rd
 #import page5_MSgen as msg
 #import page6_ace_overview as ace_ov
 #import page7_overview as ov_new
@@ -18,7 +18,6 @@ from PIL import Image
 import streamlit as st
 st.set_page_config(layout="wide")
 from streamlit_option_menu import option_menu
-#import TEST as test
 import news
 import datetime
 import pickle
@@ -294,10 +293,10 @@ elif choose == "Cluster Map":
 # ##########################################로우데이터#############################################################
 
 
-# elif choose == "DATA":
-#    st.write("준비중") 
+elif choose == "DATA":
+    #st.write("준비중") 
     
-#     #rd.generate()
+    rd.generate()
             
 # ##########################################오버뷰#############################################################    
     

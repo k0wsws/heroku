@@ -20,8 +20,8 @@ Created on Wed Feb 22 16:16:29 2023
 #import page7_overview as ov_new
 import page8_경쟁상품비교 as p8
 #import page9_chat as p9
-#import page10_회사별현황 as p10
-#import page10_회사별overview as p11
+import page10_회사별현황 as p10
+import page10_회사별overview as p11
 #import page11_fund as p12
 #import page12_fund2 as p13
 #import page13_comment as p14
@@ -213,12 +213,12 @@ if choose == "ETF Market Overview":
    #     ov.generate()
 
     elif sub_menu == "회사별 현황":
-        st.write("준비중") 
-        #p10.generate()
+        #st.write("준비중") 
+        p10.generate()
        
     elif sub_menu == "회사별 ETF 상세분석":
-        st.write("준비중") 
-          #p11.generate()
+        #st.write("준비중") 
+        p11.generate()
 
     elif sub_menu == "시장점유율":
           st.write("준비중") 

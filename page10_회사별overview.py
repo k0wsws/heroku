@@ -26,7 +26,7 @@ investor=pickle.load(open(root+'investor.pkl','rb'))
 overview=pickle.load( open(root+'overview.pkl', 'rb')) 
 etf_map=pickle.load( open(root+'etf_map.pkl', 'rb')) 
 trd_amt=pickle.load( open(root+'trd_amt.pkl', 'rb')) 
-ant_ret=pickle.load(open(root+'ant_ret.pkl','rb'))  
+ant_ret2=pickle.load(open(root+'ant_ret.pkl','rb'))  
 comp_overview=pickle.load( open(root+'comp_overview.pkl', 'rb')) 
 #aum1,investor,overview,etf_map,trd_amt,ant_ret2,comp_overview = ld.load_data_p10()
 class generate():

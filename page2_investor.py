@@ -15,11 +15,11 @@ from datetime import date,timedelta,datetime
 import pandas as pd
 from pday import Pday
 import kmean_all as km
-
+import pickle
 
 from PIL import Image
 logo = Image.open('ace.jpg') 
-
+root=''
 
 def generate():
     col_1, col_2 = st.columns( [0.8, 0.2])

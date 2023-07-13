@@ -22,8 +22,6 @@ from streamlit_option_menu import option_menu
 #import TEST as test
 #import news
 import datetime
-#import csv
-#from streamlit_disqus import st_disqus
 import pickle
 #import matplotlib.pyplot as plt
 import plotly.express as px

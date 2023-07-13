@@ -24,7 +24,7 @@ import page10_회사별현황 as p10
 #import page10_회사별overview as p11
 #import page11_fund as p12
 #import page12_fund2 as p13
-#import page13_comment as p14
+import page13_comment as p14
 #import page14_news as p15
 #import page15_all as p16
 #import page_board as pb
@@ -40,11 +40,15 @@ import pickle
 #import matplotlib.pyplot as plt
 import plotly.express as px
 import pandas as pd
-#import trend as td
+import trend as td
 #5.14일 추가
-#import related_words as related
-#import youtube_keywords as youtube
+import related_words as related
+import youtube_keywords as youtube
 
+## 화면옵션
+
+st.set_page_config(layout="wide")
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 from st_aggrid import AgGrid, JsCode, GridOptionsBuilder,ColumnsAutoSizeMode
 from bokeh.plotting import figure
@@ -53,10 +57,7 @@ from bokeh.models import ColumnDataSource, CustomJS
 from bokeh.models import DataTable, TableColumn, HTMLTemplateFormatter
 root=''
 
-## 화면옵션
 
-#st.set_page_config(layout="wide")
-st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 ##이미지
@@ -259,27 +260,27 @@ if choose == "ETF Analysis":
        
 ######################################################################################################
 
-# if choose == "BUZZ":
-#     sub_menu = option_menu("BUZZ", [ "ACE ETF 토론방 모니터", "검색어트렌드","연관검색어","유튜브"],
-#                                  icons=['display', 'display-fill', 'display', 'display-fill'],
-#                                  menu_icon="app-indicator", default_index=0,orientation ='horizontal',
-#                                  styles={
-#                                      "container": {"padding": "5!important", "background-color": "#fafafa"},
-#                                      "icon": {"color": "orange", "font-size": "25px"},
-#                                      "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "--hover-color": "#eee"},
-#                                      "nav-link-selected": {"background-color": "#02ab21"},
-#                                  }
-#                                  )    
+if choose == "BUZZ":
+    sub_menu = option_menu("BUZZ", [ "ACE ETF 토론방 모니터", "검색어트렌드","연관검색어","유튜브"],
+                                 icons=['display', 'display-fill', 'display', 'display-fill'],
+                                 menu_icon="app-indicator", default_index=0,orientation ='horizontal',
+                                 styles={
+                                     "container": {"padding": "5!important", "background-color": "#fafafa"},
+                                     "icon": {"color": "orange", "font-size": "25px"},
+                                     "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "--hover-color": "#eee"},
+                                     "nav-link-selected": {"background-color": "#02ab21"},
+                                 }
+                                 )    
 
-#     if sub_menu == "ACE ETF 토론방 모니터":
-#         p14.generate() 
+    if sub_menu == "ACE ETF 토론방 모니터":
+        p14.generate() 
     
-#     elif sub_menu == "검색어트렌드":
-#         td.generate()
-#     elif sub_menu == "연관검색어":
-#         related.generate()
-#     elif sub_menu == "유튜브":
-#         youtube.generate()
+    elif sub_menu == "검색어트렌드":
+        td.generate()
+    elif sub_menu == "연관검색어":
+        related.generate()
+    elif sub_menu == "유튜브":
+        youtube.generate()
         
 # ###############################################시장주체별#######################################################        
 

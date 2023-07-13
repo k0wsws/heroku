@@ -4,13 +4,13 @@
 #import page4_RawData as rd
 #import page5_MSgen as msg
 #import page6_ace_overview as ace_ov
-import page7_overview as ov_new
+#import page7_overview as ov_new
 import page8_경쟁상품비교 as p8
 #import page9_chat as p9
 import page10_회사별현황 as p10
 #import page10_회사별overview as p11
 #import page11_fund as p12
-#import page12_fund2 as p13
+import page12_fund2 as p13
 import page13_comment as p14
 #import page14_news as p15
 #import page15_all as p16
@@ -195,8 +195,8 @@ if choose == "ETF Market Overview":
                                )
     
     if sub_menu == "Market Overview":
-        #st.write("준비중") 
-        ov_new.aum_load()
+        st.write("준비중") 
+        #ov_new.aum_load()
     
    # elif sub_menu == "Asset 분류별 현황":
    #     ov.generate()
@@ -279,9 +279,9 @@ if choose == "BUZZ":
         
 # ###############################################Clustering########################################################### 
         
-# elif choose == "Cluster Map":
+elif choose == "Cluster Map":
 #     st.write("준비중") 
-#     #clust.generate()
+      clust.generate()
 
 
 # ##########################################시장점유율#############################################################
@@ -362,9 +362,9 @@ if choose == "BUZZ":
     
 #     p10.generate()
     
-# elif choose == "FUND-ETF ANALYSIS" :
+elif choose == "FUND-ETF ANALYSIS" :
     
-#     p12.generate()    #st_disqus("streamlit-disqus-demo")
+     p12.generate()    #st_disqus("streamlit-disqus-demo")
     
 # elif choose == "만기채권현황" :
     

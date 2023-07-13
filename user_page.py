@@ -30,6 +30,7 @@ import page13_comment as p14
 #import page_board as pb
 from PIL import Image
 import streamlit as st
+st.set_page_config(layout="wide")
 from streamlit_option_menu import option_menu
 #import TEST as test
 #import news
@@ -47,7 +48,7 @@ import youtube_keywords as youtube
 
 ## 화면옵션
 
-st.set_page_config(layout="wide")
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 from st_aggrid import AgGrid, JsCode, GridOptionsBuilder,ColumnsAutoSizeMode

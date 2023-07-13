@@ -51,11 +51,11 @@ from bokeh.plotting import figure
 
 from bokeh.models import ColumnDataSource, CustomJS
 from bokeh.models import DataTable, TableColumn, HTMLTemplateFormatter
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 ## 화면옵션
 
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 

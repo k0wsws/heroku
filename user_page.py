@@ -6,7 +6,7 @@ import page4_RawData as rd
 #import page6_ace_overview as ace_ov
 #import page7_overview as ov_new
 import page8_경쟁상품비교 as p8
-#import page9_chat as p9
+import page9_chat as p9
 import page10_회사별현황 as p10
 #import page10_회사별overview as p11
 import page11_fund as p12
@@ -350,9 +350,9 @@ elif choose == "NEWS" :
 #         p8.generate()
 #     except IndexError:
 #         st.write('경쟁상품 맵핑전')
-# elif choose == "chat" :
-#     st.write("준비중")
-#     #p9.generate()
+elif choose == "chat" :
+    #st.write("준비중")
+    p9.generate()
     
 # elif choose == "회사별 현황" :
     

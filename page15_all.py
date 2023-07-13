@@ -29,12 +29,7 @@ pweek = now-timedelta(7)
 pmonth = now-timedelta(30)
 root=''
 
-aum1=pickle.load(open(root+'aum1.pkl','rb'))   
-ant_ret=pickle.load(open(root+'ant_ret.pkl','rb'))   
-investor=pickle.load(open(root+'investor.pkl','rb'))   
-overview=pickle.load( open(root+'overview.pkl', 'rb')) 
-etf_map=pickle.load( open(root+'etf_map.pkl', 'rb')) 
-trd_amt=pickle.load( open(root+'trd_amt.pkl', 'rb')) 
+
 
 #aum1,investor,overview,etf_map,trd_amt,ant_ret = ld.load_data_p15()
 
@@ -79,6 +74,13 @@ class generate():
 
     def kor_stk(self):
         ##데이터 불러오기
+        
+        aum1=pickle.load(open(root+'aum1.pkl','rb'))   
+        ant_ret=pickle.load(open(root+'ant_ret.pkl','rb'))   
+        investor=pickle.load(open(root+'investor.pkl','rb'))   
+        overview=pickle.load( open(root+'overview.pkl', 'rb')) 
+        etf_map=pickle.load( open(root+'etf_map.pkl', 'rb')) 
+        trd_amt=pickle.load( open(root+'trd_amt.pkl', 'rb')) 
         
    
         start=max(overview[overview['TR_YMD']<=start_t]['TR_YMD'])

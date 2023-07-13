@@ -16,12 +16,12 @@ Created on Wed Feb 22 16:16:29 2023
 #import page3_cluster as clust
 #import page4_RawData as rd
 #import page5_MSgen as msg
-import page6_ace_overview as ace_ov
-import page7_overview as ov_new
+#import page6_ace_overview as ace_ov
+#import page7_overview as ov_new
 import page8_경쟁상품비교 as p8
 #import page9_chat as p9
-import page10_회사별현황 as p10
-import page10_회사별overview as p11
+#import page10_회사별현황 as p10
+#import page10_회사별overview as p11
 #import page11_fund as p12
 #import page12_fund2 as p13
 #import page13_comment as p14
@@ -61,6 +61,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 ##이미지
 logo = Image.open('ace.jpg') 
+dong = Image.open('thumb.png') 
 ACEETF = Image.open(root+'ACEETF.jpg') 
 ETF = Image.open(root+'ETF.jpg') 
 ECO = Image.open(root+'ECO.jpg') 
@@ -205,16 +206,19 @@ if choose == "ETF Market Overview":
                                )
     
     if sub_menu == "Market Overview":
-        ov_new.aum_load()
+        st.write("준비중") 
+        #ov_new.aum_load()
     
    # elif sub_menu == "Asset 분류별 현황":
    #     ov.generate()
 
     elif sub_menu == "회사별 현황":
-        p10.generate()
+        st.write("준비중") 
+        #p10.generate()
        
     elif sub_menu == "회사별 ETF 상세분석":
-          p11.generate()
+        st.write("준비중") 
+          #p11.generate()
 
     elif sub_menu == "시장점유율":
           st.write("준비중") 

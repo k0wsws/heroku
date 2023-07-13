@@ -9,7 +9,7 @@ Created on Thu Jan 12 18:26:04 2023
 import plotly.express as px
 import pandas as pd
 import pickle
-root='C:\\Users\\user\\Dashboard\\dataset\\'
+root=''
 
 ####################################################해###############################################
 ############# ACE ############

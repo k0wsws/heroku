@@ -1,6 +1,6 @@
 #import page1_분류별현황 as ov
 #import page2_investor as invt
-#import page3_cluster as clust
+import page3_cluster as clust
 #import page4_RawData as rd
 #import page5_MSgen as msg
 #import page6_ace_overview as ace_ov
@@ -9,8 +9,8 @@ import page8_경쟁상품비교 as p8
 #import page9_chat as p9
 import page10_회사별현황 as p10
 #import page10_회사별overview as p11
-#import page11_fund as p12
-import page12_fund2 as p13
+import page11_fund as p12
+#import page12_fund2 as p13
 import page13_comment as p14
 #import page14_news as p15
 #import page15_all as p16
@@ -22,8 +22,6 @@ from streamlit_option_menu import option_menu
 #import TEST as test
 #import news
 import datetime
-#import csv
-#from streamlit_disqus import st_disqus
 import pickle
 #import matplotlib.pyplot as plt
 import plotly.express as px

@@ -1,16 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jul 13 09:25:47 2023
-
-@author: USER
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb 22 16:16:29 2023
-
-@author: user
-"""
 #import page1_분류별현황 as ov
 #import page2_investor as invt
 #import page3_cluster as clust
